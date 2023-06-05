@@ -96,6 +96,68 @@
           }
         }
       }
+    },
+    "common": {
+      "projectType": "library",
+      "root": "projects/common",
+      "sourceRoot": "projects/common/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/common/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/common/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/common/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/common/src/test.ts",
+            "tsConfig": "projects/common/tsconfig.spec.json",
+            "karmaConfig": "projects/common/karma.conf.js"
+          }
+        }
+      }
+    },
+    "employee-app": {
+      "projectType": "library",
+      "root": "projects/employee-app",
+      "sourceRoot": "projects/employee-app/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/employee-app/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/employee-app/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/employee-app/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/employee-app/src/test.ts",
+            "tsConfig": "projects/employee-app/tsconfig.spec.json",
+            "karmaConfig": "projects/employee-app/karma.conf.js"
+          }
+        }
+      }
     }
   }
 }
