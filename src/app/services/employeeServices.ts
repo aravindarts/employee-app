@@ -11,7 +11,17 @@ export class EmployeeService {
     constructor(private httpClient: HttpClient){}
 
     public getEmployeeList(){
-      return this.httpClient.get(this.REST_API_SERVER+"/api/v1/employee/findAll")
+      const headers = { 'content-type': 'application/json'}  
+      const payload = { "pagination":{
+        "pageNumber":0,
+        "size":5
+    }  }  
+      return this.httpClient.post(this.REST_API_SERVER+ "/api/v1/employee/find", payload,{'headers':headers})
+    }
+
+    public saveEmployee(payload:any){
+      const headers = { 'content-type': 'application/json'}  
+      return this.httpClient.post(this.REST_API_SERVER+ "/api/v1/employee/save", payload,{'headers':headers})
     }
 
 }

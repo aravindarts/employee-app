@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserListComponent } from './user-list/user-list.component';
 import { CardModelComponent } from './card-model/card-model.component';
 import { HeaderComponent } from './header/header.component';
+import { CreateEmployeeComponent } from './create-employee/create-employee.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { HeaderComponent } from './header/header.component';
     EmployeeListComponent,
     UserListComponent,
     CardModelComponent,
-    HeaderComponent
+    HeaderComponent,
+    CreateEmployeeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
